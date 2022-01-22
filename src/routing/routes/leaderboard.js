@@ -25,7 +25,7 @@ router.get('/:id', async (request, response, next) => {
 
 	return response.status(200).json({
 		guild: ({ id: guild.id.toString(), name: guild.name, multiplier: guild.xpRate }),
-		users: users.map(user => ({ xp: user.xp, level: user.level, user: { id: user.user.id.toString(), username: user.user.username } })),
+		users: users.map(user => ({ xp: user.xp, level: user.level, user: { id: user.user.id.toString(), username: user.user.username, discriminator: user.user.discriminator } })),
 	});
 });
 
