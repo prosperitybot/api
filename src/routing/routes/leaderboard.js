@@ -1,5 +1,5 @@
 const express = require('express');
-const { Guild, GuildUser, User } = require('@benhdev-projects/database');
+const { Guild, GuildUser, User } = require('@prosperitybot/database');
 
 const router = express.Router();
 

@@ -1,7 +1,7 @@
 require('dotenv').config();
 const { sqlLogger } = require('./utils/loggingUtils');
 const Sentry = require('@sentry/node');
-const { setup: setupDatabase } = require('@benhdev-projects/database');
+const { setup: setupDatabase } = require('@prosperitybot/database');
 const routes = require('./routing');
 const middleware = require('./middleware');
 
