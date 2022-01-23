@@ -4,7 +4,7 @@
   "main": "src/index.js",
   "license": "MIT",
   "dependencies": {
-    "@prosperitybot/database": "^1.0.0",
+    "@prosperitybot/database": "^1.0.1",
     "@sentry/node": "^6.16.1",
     "@sentry/tracing": "^6.16.1",
     "cors": "^2.8.5",
