@@ -7,5 +7,6 @@ router.get('/', (request, response) => {
 });
 
 router.use('/leaderboard', require('./routes/leaderboard'));
+router.use('/stats', require('./routes/stats'));
 
 module.exports = router;
