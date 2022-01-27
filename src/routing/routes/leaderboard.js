@@ -1,5 +1,5 @@
 const express = require('express');
-const { Guild, GuildUser, User, MessageLog } = require('@prosperitybot/database');
+const { Guild, GuildUser, User } = require('@prosperitybot/database');
 
 const router = express.Router();
 
