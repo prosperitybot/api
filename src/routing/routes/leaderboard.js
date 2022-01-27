@@ -1,5 +1,5 @@
 const express = require('express');
-const { Guild, GuildUser, User } = require('@prosperitybot/database');
+const { Guild, GuildUser, User, MessageLog } = require('@prosperitybot/database');
 
 const router = express.Router();
 
@@ -24,8 +24,21 @@ router.get('/:id', async (request, response, next) => {
 	if (!users || !guild) return next(new Error('Guild not found'));
 
 	return response.status(200).json({
-		guild: ({ id: guild.id.toString(), name: guild.name, multiplier: guild.xpRate }),
-		users: users.map(user => ({ xp: user.xp, level: user.level, user: { id: user.user.id.toString(), username: user.user.username, discriminator: user.user.discriminator } })),
+		guild: ({
+			id: guild.id.toString(),
+			name: guild.name,
+			multiplier: guild.xpRate,
+		}),
+		users: users.map(user => ({
+			xp: user.xp,
+			level: user.level,
+			messageCount: user.messageCount,
+			user: {
+				id: user.user.id.toString(),
+				username: user.user.username,
+				discriminator: user.user.discriminator,
+			},
+		})),
 	});
 });
 
